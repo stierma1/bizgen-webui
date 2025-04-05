@@ -17,3 +17,6 @@ env/
 # 自定义
 output/
 checkpoints/
+tmp
+node_modules/
+client/build

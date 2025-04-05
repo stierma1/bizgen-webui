@@ -1,0 +1,21 @@
+{
+  "name": "bizgen-webui",
+  "version": "1.0.0",
+  "description": "<h1 align=\"center\">BizGen: Advancing Article-level Visual Text Rendering for Infographics Generation (Glyph-ByT5-v3)</h1> <p align=\"center\">   <a href=\"https://arxiv.org/abs/2503.20672\"><img src='https://img.shields.io/badge/arXiv-Paper-red?logo=arxiv&logoColor=white' alt='arXiv'></a>   <a href='https://bizgen-msra.github.io'><img src='https://img.shields.io/badge/Project_Page-Website-green?logo=googlechrome&logoColor=white' alt='Project Page'></a>   <a href='https://huggingface.co/PYY2001/BizGen'><img src='https://img.shields.io/badge/Model-Huggingface-yellow?logo=huggingface&logoColor=yellow' alt='Model'></a>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently \"npm run start-server\" \"npm run start-client\"",
+    "start-server": "node server.js",
+    "start-client": "cd client && npm start",
+    "build-client": "cd client && npm run build"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ajv": "^8.12.0",
+    "concurrently": "^9.1.2",
+    "express": "^5.1.0",
+    "path-to-regexp": "^8.2.0"
+  }
+}

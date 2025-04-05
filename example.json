@@ -1,0 +1,164 @@
+[     {
+    "index": "ai",
+    "layers_all": [
+      {
+        "category": "base",
+        "top_left": [
+          0,
+          0
+        ],
+        "bottom_right": [
+          1536,
+          864
+        ],
+        "caption": "The image is a promotional graphic for an AI named \"MessageKeeper.\" It features three circular insets with different photographs. The top left inset shows a row of datacenter servers, hallway down the middle and server cabinets on both sides. The top right inset displays a close-up of CPU computer chip. The bottom right inset captures a teaching robot, accompanied by a bunch of smaller student robots.\n\nThe main body of the image contains text that provides information about the AI. It mentions that the AI will only need 1 GPU, but multiple instances can be run accress multiple GPUs. The text also states that the AI will be in production for 50 years. The text is presented in a clean, modern font with a color scheme that matches the overall design of the image. The background of the image is white, which contrasts with the dark green and gold color scheme used for the text and decorative elements. The overall style of the image is professional and designed to convey the AI's production capabilities."
+      },
+      {
+        "category": "element",
+        "top_left": [
+          0,
+          0
+        ],
+        "bottom_right": [
+          1536,
+          864
+        ],
+        "caption": "The image you've provided is a solid white color with no distinguishable features or objects. It's a simple, flat color with no variations or patterns."
+      },
+      {
+        "category": "element",
+        "top_left": [
+          0,
+          71
+        ],
+        "bottom_right": [
+          313,
+          791
+        ],
+        "caption": "The image you've provided appears to be a simple, abstract shape. It's a solid, dark green rectangle with a lighter green border. The rectangle is slightly tilted to the right, and there are some lighter green dots or shapes scattered around the border, giving it a somewhat textured appearance. The background is black, which contrasts with the green rectangle, making it stand out. There are no texts, people, animals, or any other identifiable objects within the image. The style of the image is minimalistic and lacks any complex details or patterns."
+      },
+      {
+        "category": "element",
+        "top_left": [
+          48,
+          216
+        ],
+        "bottom_right": [
+          152,
+          337
+        ],
+        "caption": "The picture features a stylized illustration of a blue rendered AI brain with lightning streaks. The brain is the central element, and the lightning streaks placed on top of it. The background is black, and there are white lines around the illustration, giving it a framed appearance."
+      },
+      {
+        "category": "element",
+        "top_left": [
+          0,
+          76
+        ],
+        "bottom_right": [
+          307,
+          787
+        ],
+        "caption": "The picture features a black background with a decorative border and a central image of a bunch of robots. The border is adorned with intricate interlocking robot handshakes, and the robots are depicted with a detailed texture."
+      },
+      {
+        "category": "element",
+        "top_left": [
+          729,
+          88
+        ],
+        "bottom_right": [
+          1079,
+          438
+        ],
+        "caption": "The image features a black circle with a gold-colored border."
+      },
+      {
+        "category": "element",
+        "top_left": [
+          1104,
+          88
+        ],
+        "bottom_right": [
+          1454,
+          438
+        ],
+        "caption": "The picture features a black circle with a gold-colored border."
+      },
+      {
+        "category": "element",
+        "top_left": [
+          354,
+          88
+        ],
+        "bottom_right": [
+          704,
+          438
+        ],
+        "caption": "The image features a simple, circular design with a gold-colored border. The center of the circle is black, creating a stark contrast with the border."
+      },
+      {
+        "category": "element",
+        "top_left": [
+          376,
+          110
+        ],
+        "bottom_right": [
+          681,
+          415
+        ],
+        "caption": "The picture shows a close-up view of a pile of envolopes"
+      },
+      {
+        "category": "element",
+        "top_left": [
+          750,
+          110
+        ],
+        "bottom_right": [
+          1057,
+          417
+        ],
+        "caption": "The picture shows a close-up of a robot and human handshake."
+      },
+      {
+        "category": "element",
+        "top_left": [
+          1125,
+          110
+        ],
+        "bottom_right": [
+          1430,
+          416
+        ],
+        "caption": "The picture features a robotic hand holding a message.  The hand is outstretced as if its giving it to someone"
+      },
+      {
+        "category": "text",
+        "top_left": [
+          17,
+          293
+        ],
+        "bottom_right": [
+          187,
+          309
+        ],
+        "caption": "Text \"MessageKeeper\" in <color-14>, <en-font-71>. ",
+        "text": "MessageKeeper"
+      },
+      {
+        "category": "text",
+        "top_left": [
+          49,
+          377
+        ],
+        "bottom_right": [
+          264,
+          472
+        ],
+        "caption": "Text \"The Datacenter\" in <color-14>, <en-font-53>. ",
+        "text": "The Datacenter"
+      }
+    ],
+    "full_image_caption": "The image is a promotional graphic for an AI named 'MessageKeeper'. It features three circular insets with different photographs. The first inset shows a scenic view of a vineyard with rows of grapevines stretching across a landscape. The second inset displays a close-up of green grape clusters on the vine. The third inset captures a bottle of wine with a cork and a label, accompanied by a bunch of green grapes.\n\nThe main body of the image contains text that provides information about the winery. It mentions that 'A total of about 17 hectares are planted with vines, of which 9.5 hectares were planted after 1996: the property is one of the largest wine estates in the area.' The text also states that 'Breeding programs over the past 50 years by plant geneticists and food scientists have brought about dozens of new types of Muscadine grapes, some of which are excellently suited to winemaking.' Additionally, it mentions that 'The cellar is equipped to produce a total of around 60,000 bottles, but the capacity could easily be increased to about 100,000 bottles per year.'\n\nThe text is presented in a clean, modern font with a color scheme that matches the overall design of the image. The background of the image is white, which contrasts with the dark green and gold color scheme used for the text and decorative elements. The overall style of the image is professional and designed to convey the winery's history and production capabilities. The text layers include: 'BOURGON', 'The Vineyards', '02 / 04', '17 hectares', '50 years', '60,000 bottles', 'Breeding programs over the past 50 years by plant geneticists and food scientists have brought about dozens of new types of Muscadine grapes, some of which are excellently suited to winemaking.', 'The cellar is equipped to produce a total of around 60,000 bottles, but the capacity could easily be increased to about 100,000 bottles per year.', 'A total of about 17 hectares are planted with vines, of which 9.5 hectares were planted after 1996: the property is one of the largest wine estates in the area.'"
+  }]

@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["index", "layers_all", "full_image_caption"],
+    "properties": {
+      "index": {
+        "type": "string",
+        "description": "Unique identifier for the image configuration"
+      },
+      "layers_all": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["category", "top_left", "bottom_right", "caption"],
+          "properties": {
+            "category": {
+              "type": "string",
+              "enum": ["base", "element", "text"],
+              "description": "Type of layer component"
+            },
+            "top_left": {
+              "type": "array",
+              "minItems": 2,
+              "maxItems": 2,
+              "items": { "type": "number" },
+              "description": "Top-left coordinates [x,y]"
+            },
+            "bottom_right": {
+              "type": "array",
+              "minItems": 2,
+              "maxItems": 2,
+              "items": { "type": "number" },
+              "description": "Bottom-right coordinates [x,y]"
+            },
+            "caption": {
+              "type": "string",
+              "description": "Descriptive text for the layer"
+            },
+            "text": {
+              "type": "string",
+              "description": "Actual text content (required for text layers)"
+            }
+          }
+        }
+      },
+      "full_image_caption": {
+        "type": "string",
+        "description": "Complete description of the entire image"
+      }
+    }
+  }
+}
