@@ -16,10 +16,44 @@
 - **Powerful visual text rendering**: Supports article-level visual text rendering in ten different languages and maintains high spelling accuracy.
 - **Image generation diversity and flexibility**: Supports layer-wise detail refinement through layout conditional CFG.
 
+<!-- Docker Deploy -->
+## 🐳 Docker Run
+```bash
+# Run the container (defaults to localhost:3000)
+docker run -p 3000:3000 \
+  --gpu=all \
+  -e HOSTNAME=localhost \
+  -e URL_PORT=3000 \
+  stierma1/bizgen-ui:latest
+```
+
+
+<!-- Docker Setup -->
+## 🐳 Docker Setup
+```bash
+# Download the checkpoints to the local directory
+todo 
+
+# Build the image
+docker build -t bizgen-webui .
+
+# Run the container (defaults to localhost:3000)
+docker run -p 3000:3000 \
+  --gpu=all \
+  -e HOSTNAME=localhost \
+  -e URL_PORT=3000 \
+  bizgen-webui
+```
 
 <!-- TODO List -->
-## 🚧 TODO List
+## 🚧 UI TODO List
+- [x] Add web UI interface
+- [ ] Add support for infographics
+
+<!-- TODO List -->
+## 🚧 Server TODO List
 - [x] Release inference code and pretrained model
+- [x] Add web UI interface
 - [ ] Release training code
 
 
