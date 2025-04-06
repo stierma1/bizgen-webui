@@ -21,10 +21,10 @@
 ```bash
 # Run the container (defaults to localhost:3000)
 docker run -p 3000:3000 \
-  --gpu=all \
+  --gpus 'all' \
   -e HOSTNAME=localhost \
   -e URL_PORT=3000 \
-  stierma1/bizgen-ui:latest
+  stierma1/bizgen-ui:0.1
 ```
 
 
