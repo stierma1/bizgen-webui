@@ -85,6 +85,38 @@ function SlideSelector() {
                 </button>
               </>
             )}
+            {generating && (
+              <div className="spinner-container">
+                <div className="spinner"></div>
+              </div>
+            )}
+    
+            {generationResult && (
+              <div className="result-section">
+                <h3>Generation Result</h3>
+                <div className="preview-section">
+                  <div className="image-container">
+                    <img
+                      src={`/slides/${generationResult.generated_index}.png`}
+                      alt="Generated slide"
+                    />
+                    {showBBox && (
+                      <img
+                        className="overlay"
+                        src={`/slides/${generationResult.generated_index}_bbox.png`}
+                        alt="Generated bounding box overlay"
+                      />
+                    )}
+                  </div>
+                </div>
+              </div>
+            )}
+    
+            {error && (
+              <div className="error-message">
+                Error: {error}
+              </div>
+            )}
           </div>
         </div>
       )}
@@ -97,6 +129,9 @@ function SlideEditor() {
   const navigate = useNavigate();
   const [slideData, setSlideData] = useState(location.state?.slideDetails || {});
   const [showBBox, setShowBBox] = useState(true);
+  const [generating, setGenerating] = useState(false);
+  const [error, setError] = useState(null);
+  const [generationResult, setGenerationResult] = useState(null);
   const [formData, setFormData] = useState({
     name: slideData.name || '',
     caption: slideData.full_image_caption || '',
@@ -144,11 +179,12 @@ function SlideEditor() {
       if (!response.ok) throw new Error('Generation failed');
       
       const result = await response.json();
-      console.log('Generation successful:', result);
-      navigate('/');
+      setGenerationResult(result);
+      setGenerating(false);
       
     } catch (error) {
-      console.error('Submission error:', error);
+      setError(error.message);
+      setGenerating(false);
     }
   };
 
@@ -238,8 +274,12 @@ function SlideEditor() {
               ))}
             </div>
 
-            <button type="submit" className="template-button">
-              Generate Updated Slide
+            <button
+              type="submit"
+              className="template-button"
+              disabled={generating}
+            >
+              {generating ? 'Generating...' : 'Generate Updated Slide'}
             </button>
           </form>
         </div>

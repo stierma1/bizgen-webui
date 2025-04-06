@@ -26,6 +26,9 @@ WORKDIR /app/client
 RUN npm ci && npm run build
 
 WORKDIR /app
+RUN pip3 install --break-system-packages -U "huggingface_hub[cli]"
+#RUN huggingface-cli login --token $HF_TOKEN --add-to-git-credential
+#RUN huggingface-cli download PYY2001/BizGen
+
 # Set runtime configuration
 EXPOSE 3000
-CMD ["node", "server.js"]
