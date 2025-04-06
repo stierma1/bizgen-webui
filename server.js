@@ -16,6 +16,7 @@ fs.mkdirSync(outputBase, { recursive: true });
 
 const app = express();
 const port = 3000;
+const HOSTNAME = process.env["HOSTNAME"] || "localhost"
 
 // Serve React build files
 app.use(express.static(path.join(__dirname, 'client', 'build')));
@@ -34,8 +35,8 @@ app.get('/api/slides', (req, res) => {
     // Map each slide entry to API response format
     const responseData = slidesData.map(slide => ({
       index: slide.index,
-      slideUrl: `http://localhost:${port}/slides/${slide.index}.png`,
-      bboxUrl: `http://localhost:${port}/slides/${slide.index}_bbox.png`
+      slideUrl: `http://${HOSTNAME}:${port}/slides/${slide.index}.png`,
+      bboxUrl: `http://${HOSTNAME}:${port}/slides/${slide.index}_bbox.png`
     }));
 
     res.json(responseData);
@@ -66,10 +67,10 @@ app.get('/api/slides/:index', (req, res) => {
       index: currentIndex,
       indexJson: currentSlide,
       nextSlideUrl: slidesData.find(slide => slide.index === (slideGroup + "_" + nextSlide))
-        ? `http://localhost:${port}/api/slides/${slideGroup + "_" + nextSlide}`
+        ? `http://${HOSTNAME}:${port}/api/slides/${slideGroup + "_" + nextSlide}`
         : null,
       previousSlideUrl: slidesData.find(slide => slide.index === (slideGroup + "_" + previousSlide))
-        ? `http://localhost:${port}/api/slides/${slideGroup + "_" + previousSlide}`
+        ? `http://${HOSTNAME}:${port}/api/slides/${slideGroup + "_" + previousSlide}`
         : null
     });
   } catch (error) {
@@ -104,8 +105,8 @@ app.post('/api/generate', express.json(), async (req, res) => {
     const index = req.body[0].index;
     res.json({
       index: index,
-      imageUrl: `http://localhost:${port}/outputs/${timestamp}/${index}.png`,
-      bboxUrl: `http://localhost:${port}/outputs/${timestamp}/${index}_bbox.png`
+      imageUrl: `http://${HOSTNAME}:${port}/outputs/${timestamp}/${index}.png`,
+      bboxUrl: `http://${HOSTNAME}:${port}/outputs/${timestamp}/${index}_bbox.png`
     });
 
   } catch (error) {
@@ -126,5 +127,5 @@ app.get('/', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
+  console.log(`Server running at http://${HOSTNAME}:${port}`);
 });

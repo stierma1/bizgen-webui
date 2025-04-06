@@ -15,19 +15,17 @@ COPY client/package*.json ./client/
 COPY requirements.txt ./
 
 # Install Python dependencies
-RUN pip3 install --no-cache-dir -r requirements.txt
+RUN pip3 install --no-cache-dir --break-system-packages -r requirements.txt
 
+COPY . .
 # Install Node.js server dependencies
-RUN npm ci --production
+RUN npm i --production
 
 # Build React client
 WORKDIR /app/client
 RUN npm ci && npm run build
 
-# Copy application code
 WORKDIR /app
-COPY . .
-
 # Set runtime configuration
 EXPOSE 3000
 CMD ["node", "server.js"]
