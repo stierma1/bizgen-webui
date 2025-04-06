@@ -97,13 +97,13 @@ function SlideSelector() {
                 <div className="preview-section">
                   <div className="image-container">
                     <img
-                      src={`/slides/${generationResult.generated_index}.png`}
+                      src={generationResult.imageUrl}
                       alt="Generated slide"
                     />
                     {showBBox && (
                       <img
                         className="overlay"
-                        src={`/slides/${generationResult.generated_index}_bbox.png`}
+                        src={generationResult.bboxUrl}
                         alt="Generated bounding box overlay"
                       />
                     )}
