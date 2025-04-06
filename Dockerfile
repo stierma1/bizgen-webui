@@ -27,6 +27,7 @@ RUN npm ci && npm run build
 
 WORKDIR /app
 RUN pip3 install --break-system-packages -U "huggingface_hub[cli]"
+RUN pip3 install --no-cache-dir --break-system-packages huggingface_hub==0.23.0
 #RUN huggingface-cli login --token $HF_TOKEN --add-to-git-credential
 #RUN huggingface-cli download PYY2001/BizGen
 

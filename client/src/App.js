@@ -136,6 +136,7 @@ function SlideEditor() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setGenerating(true);
+    setError(null);
     try {
       const response = await fetch('/api/generate', {
         method: 'POST',
@@ -282,6 +283,7 @@ function SlideEditor() {
                   </div>
                   <button
                     className="template-button"
+                    type="button"
                     onClick={() => {
                       const link = document.createElement('a');
                       link.href = `${generationResult.imageUrl}`;
