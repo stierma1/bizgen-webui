@@ -85,38 +85,7 @@ function SlideSelector() {
                 </button>
               </>
             )}
-            {generating && (
-              <div className="spinner-container">
-                <div className="spinner"></div>
-              </div>
-            )}
-    
-            {generationResult && (
-              <div className="result-section">
-                <h3>Generation Result</h3>
-                <div className="preview-section">
-                  <div className="image-container">
-                    <img
-                      src={generationResult.imageUrl}
-                      alt="Generated slide"
-                    />
-                    {showBBox && (
-                      <img
-                        className="overlay"
-                        src={generationResult.bboxUrl}
-                        alt="Generated bounding box overlay"
-                      />
-                    )}
-                  </div>
-                </div>
-              </div>
-            )}
-    
-            {error && (
-              <div className="error-message">
-                Error: {error}
-              </div>
-            )}
+            
           </div>
         </div>
       )}
@@ -281,6 +250,38 @@ function SlideEditor() {
             >
               {generating ? 'Generating...' : 'Generate Updated Slide'}
             </button>
+            {generating && (
+              <div className="spinner-container">
+                <div className="spinner"></div>
+              </div>
+            )}
+    
+            {generationResult && (
+              <div className="result-section">
+                <h3>Generation Result</h3>
+                <div className="preview-section">
+                  <div className="image-container">
+                    <img
+                      src={generationResult.imageUrl}
+                      alt="Generated slide"
+                    />
+                    {showBBox && (
+                      <img
+                        className="overlay"
+                        src={generationResult.bboxUrl}
+                        alt="Generated bounding box overlay"
+                      />
+                    )}
+                  </div>
+                </div>
+              </div>
+            )}
+    
+            {error && (
+              <div className="error-message">
+                Error: {error}
+              </div>
+            )}
           </form>
         </div>
       </div>
