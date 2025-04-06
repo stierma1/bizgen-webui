@@ -6,13 +6,18 @@ function SlideSelector() {
   const navigate = useNavigate();
   const [slides, setSlides] = useState([]);
   const [selectedSlide, setSelectedSlide] = useState(null);
-  const [showOverlay, setShowOverlay] = useState(true);
+  const [showOverlay, setShowOverlay] = useState(false);
   const [slideDetails, setSlideDetails] = useState(null);
 
   useEffect(() => {
     fetch('/api/slides')
       .then(res => res.json())
-      .then(data => setSlides(data))
+      .then(data => {
+        data.sort((a, b) => {
+          return parseInt(a.index.split("_")[0]) - parseInt(b.index.split("_")[0])
+        });
+        return setSlides(data)
+      })
       .catch(console.error);
   }, []);
 
@@ -130,7 +135,7 @@ function SlideEditor() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+    setGenerating(true);
     try {
       const response = await fetch('/api/generate', {
         method: 'POST',
@@ -223,6 +228,7 @@ function SlideEditor() {
                   
                   {layer.active && (
                     <div className="layer-fields">
+                      {layer.category === "text" && (
                       <div className="form-group">
                         <label>Text:</label>
                         <textarea
@@ -230,6 +236,7 @@ function SlideEditor() {
                           onChange={(e) => handleLayerChange(index, 'text', e.target.value)}
                         />
                       </div>
+                      )}
                       <div className="form-group">
                         <label>Caption:</label>
                         <textarea
@@ -273,6 +280,19 @@ function SlideEditor() {
                       />
                     )}
                   </div>
+                  <button
+                    className="template-button"
+                    onClick={() => {
+                      const link = document.createElement('a');
+                      link.href = `${generationResult.imageUrl}`;
+                      link.download = `${generationResult.imageUrl}`;
+                      document.body.appendChild(link);
+                      link.click();
+                      document.body.removeChild(link);
+                    }}
+                  >
+                    Download Slide
+                  </button>
                 </div>
               </div>
             )}

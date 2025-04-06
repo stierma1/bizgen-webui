@@ -32,3 +32,4 @@ RUN pip3 install --break-system-packages -U "huggingface_hub[cli]"
 
 # Set runtime configuration
 EXPOSE 3000
+CMD ["node", "server.js"]
