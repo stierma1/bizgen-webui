@@ -20,6 +20,22 @@
   min-width: 300px;
 }
 
+.infographic-selector {
+  font-family: Arial, sans-serif;
+}
+
+.infographic-selector h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.infographic-selector select {
+  padding: 8px 12px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  min-width: 300px;
+}
+
 .preview-section {
   display: flex;
   gap: 30px;
