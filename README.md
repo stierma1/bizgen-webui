@@ -24,7 +24,7 @@ docker run -p 3000:3000 \
   --gpus 'all' \
   -e HOSTNAME=localhost \
   -e URL_PORT=3000 \
-  stierma1/bizgen-ui:0.1
+  stierma1/bizgen-ui:0.2
 ```
 
 
@@ -45,10 +45,33 @@ docker run -p 3000:3000 \
   bizgen-webui
 ```
 
+## 🌐 API Endpoint
+The `/api/generate` endpoint creates new slides/infographics from JSON configs. Example usage:
+
+```bash
+curl -X POST "http://localhost:3000/api/generate" \
+  -H "Content-Type: application/json" \
+  -d @example.json
+```
+
+### Request Requirements
+- Must match [example.schema.json](example.schema.json)
+
+### Successful Response
+```json
+{
+  "index": "0_0",
+  "imageUrl": "http://localhost:3000/outputs/1712548800000/0_0.png",
+  "bboxUrl": "http://localhost:3000/outputs/1712548800000/0_0_bbox.png"
+}
+```
+
 <!-- TODO List -->
 ## 🚧 UI TODO List
 - [x] Add web UI interface
-- [ ] Add support for infographics
+- [x] Add support for infographics
+- [ ] Add color reference
+- [ ] Add font reference
 
 <!-- TODO List -->
 ## 🚧 Server TODO List
